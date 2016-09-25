@@ -1,13 +1,12 @@
 # react-started-kit
 
-Hello world simple page application.  
-**Babel** - compile to ES5  
+Hello world simple page application with React + TypeScript + test infrastructure.  
+**TypeScript** - compile to ES6 (or ES5. see tsconfig.json)
 **Stylus, PostCSS** - css preprocessor  
 **React** **Redux**  
 **Webpack** - build manager  
-**Mocha, Chai, Sinon** - unit tests library  
-**Isparta** - code coverage  
-**eslint, stylint** - JavaScript and Stylus code validation  
+**Jest, Enzyme** - unit tests library  
+**tslint, stylint** - TypeScript and Stylus code validation  
 **Gulp** for run linters
 
 Tested with Node.js 6
@@ -28,7 +27,7 @@ http://localhost:8080/
 http://localhost:8080/webpack-dev-server/ with live reload
 ```
 
-Run unit test. (Single run with PhantomJS)
+Run unit test
 ```
 npm test
 ```
@@ -38,7 +37,7 @@ Compile build. (Are put into ./build folder)
 npm run build
 ```
 
-Check JavaScript and Stylus code validation
+Check TypeScript and Stylus code validation
 ```
 npm run lint
 ```
