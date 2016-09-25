@@ -27,6 +27,8 @@
           "src"
       ],
       "notify": true,
+      "collectCoverage": true,
+      "collectCoverageFrom": ["src/**/*.{ts,tsx}", "!src/**/*.d.ts"],
       "setupFiles": ["<rootDir>/__tests__/setup.ts"]
   },
   "devDependencies": {
