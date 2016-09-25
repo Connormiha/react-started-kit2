@@ -7,7 +7,7 @@ import * as capitalize from 'lodash/capitalize';
 
 const IS_NOT_FIELD = 'is not filled';
 
-export default class FormWorkTable extends React.PureComponent<any ,any> {
+export default class FormWorkTable extends React.PureComponent<any, any> {
     render() {
         let {name, surname, sex} = this.props,
             classNameItem = b('item').toString(),

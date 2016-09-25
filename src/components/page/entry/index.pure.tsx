@@ -6,7 +6,7 @@ import WorkSheetForm from 'components/form/WorkSheet';
 import WorkSheetTable from 'components/common/WorkSheetTable';
 import './index.styl';
 
-export default class PageEntryPure extends React.Component<any ,any> {
+export default class PageEntryPure extends React.Component<any, any> {
     handleChangeName({target: {value}}) {
         this.props.onUpdateUserName(value);
     }

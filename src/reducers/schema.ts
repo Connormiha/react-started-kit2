@@ -1,8 +1,8 @@
 const schema = {
     user: {
         name: '',
-        surname: '',
-        sex: 'male'
+        sex: 'male',
+        surname: ''
     }
 };
 

@@ -1,31 +1,33 @@
 'use strict';
 
 const gulp = require('gulp');
-const eslint = require('gulp-eslint');
+const tslint = require('gulp-tslint');
 const stylint = require('gulp-stylint');
 const execSync = require('child_process').execSync;
 
 const PRE_COMMIT = process.env.NODE_ENV === 'pre_commit';
 
 let changedFiles;
-let changedFilesJavascript;
+let changedFilesTypescript;
 let changedFilesStylus;
 
 if (PRE_COMMIT) {
     changedFiles = execSync('git diff --cached --name-only --diff-filter=ACM', {encoding: 'utf8'});
     changedFiles = changedFiles.split('\n');
-    changedFilesJavascript = changedFiles.filter((item) => /^src\/.+?\.jsx?$/.test(item));
+    changedFilesTypescript = changedFiles.filter((item) => /^src\/.+?\.tsx?$/.test(item) && !/\.d\.ts$/.test(item));
     changedFilesStylus = changedFiles.filter((item) => /^src\/.+?\.styl$/.test(item));
 }
 
 /**
- * Check JavaScript validation
+ *
+ * @desc Check TypeScript validation
  */
 gulp.task('tslint', ()=>
-    gulp.src(PRE_COMMIT ? changedFilesJavascript : ['src/**/*.{js,jsx}'])
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError())
+    gulp.src(PRE_COMMIT ? changedFilesTypescript : ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'])
+        .pipe(tslint({
+            formatter: 'verbose'
+        }))
+        .pipe(tslint.report())
 );
 
 /**
@@ -41,4 +43,4 @@ gulp.task('styluslint', ()=>
 /**
 * validation Stylus and TypeScript
 */
-gulp.task('lint', ['eslint', 'styluslint']);
+gulp.task('lint', ['tslint', 'styluslint']);

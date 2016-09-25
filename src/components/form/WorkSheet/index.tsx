@@ -4,7 +4,7 @@ const b = bem('form-work-sheet');
 
 import './index.styl';
 
-export default class FormWorkSheet extends React.Component<any ,any> {
+export default class FormWorkSheet extends React.PureComponent<any, any> {
     render() {
         let {name, surname, sex, onChangeName, onChangeSurname, onChangeSex} = this.props,
             classNameLabel = b('label'),
