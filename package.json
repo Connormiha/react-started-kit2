@@ -19,7 +19,7 @@
     "test": "jest"
   },
   "jest": {
-      "moduleFileExtensions": ["ts", "tsx", "js"],
+      "moduleFileExtensions": ["ts", "tsx", "js", "json", "styl", "css"],
       "scriptPreprocessor": "<rootDir>/preprocessor.js",
       "testRegex": "/__tests__/.*\\.spec\\.(ts|tsx)$",
       "moduleDirectories": [

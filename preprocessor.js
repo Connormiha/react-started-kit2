@@ -6,11 +6,16 @@ module.exports = {
     if (path.endsWith('.ts') || path.endsWith('.tsx')) {
       return tsc.transpile(
         src,
-        tsconfig,
+        tsconfig.compilerOptions,
         path,
         []
       );
     }
+
+    if (path.endsWith('.styl') || path.endsWith('.css')) {
+        return '';
+    }
+
     return src;
   },
 };

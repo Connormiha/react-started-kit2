@@ -1,7 +1,7 @@
 import * as Actions from 'flux/user';
 import {createAppStore} from 'store';
 
-const STORE_ID = 'user';
+const STORE_ID: string = 'user';
 
 let store;
 
