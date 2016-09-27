@@ -28,7 +28,7 @@
       "styl",
       "css"
     ],
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "scriptPreprocessor": "<rootDir>/__tests__/preprocessor.js",
     "testRegex": "/__tests__/.*\\.spec\\.(ts|tsx)$",
     "moduleDirectories": [
       "node_modules",
