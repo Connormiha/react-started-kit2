@@ -15,6 +15,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "lint": "gulp lint",
+    "postinstall": "typings install",
     "start": "webpack-dev-server",
     "test": "jest"
   },
