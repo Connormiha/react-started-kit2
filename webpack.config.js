@@ -16,7 +16,7 @@ function extractStyle(loaders) {
 }
 
 let cssLoaders = 'style!css?localIdentName=[hash:base64]';
-let stylusLoaders = `${cssLoaders}!stylus`;
+let stylusLoaders = `${cssLoaders}&modules!stylus`;
 
 cssLoaders = extractStyle(cssLoaders);
 stylusLoaders = extractStyle(stylusLoaders);

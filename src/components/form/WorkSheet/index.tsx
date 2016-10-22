@@ -1,17 +1,14 @@
 import * as React from 'react';
-
-const b = bem('form-work-sheet');
-
-import './index.styl';
+const styles = require('./index.styl');
 
 export default class FormWorkSheet extends React.PureComponent<any, any> {
     render() {
         let {name, surname, sex, onChangeName, onChangeSurname, onChangeSex} = this.props,
-            classNameLabel = b('label'),
-            classNameLabelTitle = b('label-title');
+            classNameLabel = styles.label,
+            classNameLabelTitle = styles['label-title'];
 
         return (
-            <form className={b}>
+            <form>
                 <label className={classNameLabel}>
                     <span className={classNameLabelTitle}>Name:</span>
                     <input value={name} onChange={onChangeName} />

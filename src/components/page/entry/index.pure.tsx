@@ -1,10 +1,8 @@
 import * as React from 'react';
-
-const b = bem('entry');
+const styles = require('./index.styl');
 
 import WorkSheetForm from 'components/form/WorkSheet';
 import WorkSheetTable from 'components/common/WorkSheetTable';
-import './index.styl';
 
 export default class PageEntryPure extends React.Component<any, any> {
     handleChangeName({target: {value}}) {
@@ -23,10 +21,10 @@ export default class PageEntryPure extends React.Component<any, any> {
         let {user} = this.props;
 
         return (
-            <div className={b}>
+            <div className={styles.page}>
                 <h2>Hello {user.name || 'Anonym'}</h2>
-                <div className={b('worksheet')}>
-                    <div className={b('form')}>
+                <div className={styles.worksheet}>
+                    <div className={styles.form}>
                         <WorkSheetForm
                             {...user}
                             onChangeName={this.handleChangeName.bind(this)}
@@ -34,7 +32,7 @@ export default class PageEntryPure extends React.Component<any, any> {
                             onChangeSex={this.handleChangeSex.bind(this)}
                         />
                     </div>
-                    <div className={b('preview')}>
+                    <div className={styles.preview}>
                         <WorkSheetTable {...user} />
                     </div>
                 </div>

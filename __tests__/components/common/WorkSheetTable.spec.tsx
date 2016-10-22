@@ -8,6 +8,6 @@ describe('WorkSheetTable', () => {
           <View />
         );
 
-        expect(view.find('.work-sheet-table').length).toBe(1);
+        expect(view.find('article').length).toBe(1);
     });
 });
